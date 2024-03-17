@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>hogwards home</title>
+    <script src="https://kit.fontawesome.com/4796c270ef.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .banner{
+            width: 100%;
+            height: 100vh;
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1559135197-8a45ea74d367?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar{
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 120px;
+            cursor:pointer;
+        }
+        .navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+        .navbar ul li:after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background:#009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+
+        }
+        .navbar ul li:hover:after{
+            width: 100%;
+        }
+        .content{
+            width: 100%;
+            position: absolute;
+            top:50%;
+            transform:translateY(-50%);
+            text-align: center;
+            color: white;
+        }
+        .content h1{
+            font-size: 70px;
+            margin-top:80px;
+
+        }
+        .content p{
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+        button{
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+
+            border-radius: 25px;
+            font-weight: bold;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid deepskyblue;
+
+
+        }
+        span{
+            background: deepskyblue;
+            height: 100%;
+            width: 0%;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+
+        }
+        button:hover span{
+            width: 100%;
+
+        }
+        button:hover{
+            border: none    ;
+        }
+        .logo{
+            height: 150px;
+            width: 25%;
+            color: white;
+
+        }
+        .logo:hover{
+            width: 30%;
+            height: 160px;
+            transition: 1s;
+        }
+        p{
+            font-family: "Comic Sans MS" ;
+        }
+        h1{
+            font-family: gill, sans-serif;
+        }
+        #features{
+            margin-top: 30px;
+            padding: 5vw 8vw 0 8vw;
+            text-align: center;
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1619139082195-9a31f6f013e0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            padding-bottom: 90px;
+            background-size: cover;
+            background-position: center;
+
+        }
+        #features .fea-box{
+            background: cornsilk;
+            text-align: center;
+            padding-bottom: 50px;
+            padding-top: 10px;
+
+        }
+        #features .fea-box:hover{
+            background: yellow;
+            transition: 1s;
+            transform: scale(1.09);
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1537888692311-8a7fb3e9f374?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            background-size: cover;
+            background-position: center;
+        }
+        #features .fea-box i{
+            font-size: 2.3rem;
+            color: rgba(44,44,80);
+            color: deepskyblue;
+        }
+        #features .fea-box h3{
+            font-size: 1.2rem;
+            font-weight: 600;
+            color:rgba(46,46,80);
+            padding: 13px 0 7px 0;
+        }
+        #features .fea-box:hover h3{
+            color: white;
+        }
+        #features .fea-box p{
+            font-size: 1rem;
+            font-weight: 400;
+            color:rgba(70,70,87);
+            color: deepskyblue;
+
+        }
+        #features .fea-base{
+            display: grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) ;
+            grid-gap: 1rem;
+            margin-top: 50px;
+
+        }
+        #course{
+            padding: 8vw 8vw 0 8vw;
+            text-align: center;
+        }
+        #course .courses{
+            text-align: start;
+            background: lavender;
+            height: 100%;
+        }
+        #course .courses img{
+            width: 100%;
+            height: 70%;
+            background-size:cover ;
+            background-position: center;
+        }
+        #course .course-box{
+            display: grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) ;
+            grid-gap: 2rem;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+
+
+        }
+        #course .courses .details{
+            padding: 15px 15px 0 15px;
+        }
+        #course .courses .details i{
+            color: yellow;
+            font-size: .9rem;
+        }
+        h6{
+            font-size: 20px;
+        }
+        #course .courses:hover{
+            background: darkturquoise;
+            transition: 1s;
+            transform: scale(1.1);
+        }
+        #experts{
+            padding: 8vw 8vw 0 8vw;
+            text-align: center;
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1619139082195-9a31f6f013e0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            padding-bottom: 40px;
+
+
+        }
+        #experts .expert-box{
+            display: grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            grid-gap: 1rem;
+            margin-top: 50px;
+
+        }
+        #experts .expert-box .profile{
+            background: bisque;
+            padding: 30px 10px;
+        }
+        .pro-links{
+            margin-top: 10px;
+
+        }
+        .pro-links i{
+            padding: 10px 13px;
+            border: 1px solid rgba(21,21,100);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .pro-links i:hover{
+            background: rgba(21,21,100);
+            color: white;
+            border: 1px solid rgba(21,21,100);
+            cursor: pointer;
+        }
+        #experts:hover{
+
+            transition: 20s;
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1619139082195-9a31f6f013e0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            background-size: cover;
+            background-position: center;
+        }
+        #experts .expert-box .profile:hover{
+            background: greenyellow;
+            transition: 0.9s ease;
+            transform: scale(1.1);
+        }
+        #experts h1 {
+            font-size: 70px;
+            font-weight: bold;
+            color: darkturquoise;
+
+        }
+        footer{
+            padding:8vw;
+            background-color:deepskyblue;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 50px;
+
+        }
+        footer .footer-col{
+            padding-bottom: 40px;
+
+        }
+        footer h3{
+            color: white;
+            font-weight:600 ;
+            padding-bottom: 20px;
+        }
+        footer li{
+            list-style: none;
+            color: greenyellow;
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer ;
+            transition: 0.3s ease;
+        }
+        footer li:hover{
+            color: rgba(241,240,245);
+
+
+        }
+        footer p{
+            color: aliceblue;
+
+        }
+        footer .subcribe{
+            margin-top: 20px;
+
+
+
+        }
+        footer .subcribe a{
+            border-radius: 5px;
+            background: yellow;
+            text-align: center;
+            font-weight: 600;
+            padding: 13px 35px;
+            font-size: 0.9rem;
+        }
+        footer input{
+            width: 220px;
+            padding: 15px 12px;
+            background: lavender;
+            border: none;
+            outline: none;
+            color: white;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="banner">
+    <div class="navbar">
+        <img src="https://adsventuregaming.files.wordpress.com/2023/03/hogwarts-legacy-logo.png?w=639" class="logo">
+        <ul>
+            <li><a href="">Home</a><li>
+            <li><a href="">About</a><li>
+            <li><a href="">Adminstration</a><li>
+            <li><a href="">Acadmics</a><li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>EDUCATION OF TOMMOROW</h1>
+        <P>Our University providing a good knowledge and having much fun in this collage and get free backs <br>There is no back fees also you will get best faculty from upes bidholi </P>
+        <div>
+            <button id="myButton" type="button" onclick=""><span></span>Service</button>
+            <button id="gaziabad" type="button" onclick=""><span></span>Unique Features</button>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+<section id="features">
+    <h1 style="font-size: 60px;color: crimson;font-family: 'Arial Black'">Awsome Features</h1>
+    <p>there are features of out university gving out best in</p>
+    <div class="fea-base">
+        <div class="fea-box">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Scolarship Faculty</h3>
+            <p>Merit-based: These awards are based on a student's academic, artistic, athletic, or other abilities, and often a factor in an applicant's extracurricular activities and community service record.</p>
+
+        </div>
+        <div class="fea-box">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Certification</h3>
+            <p>One of the most common types of certification in modern society is professional certification, where a person is certified as being able to competently complete a job or task, usually by the passing </p>
+
+        </div>
+        <div class="fea-box">
+            <i class="fas fa-award"></i>
+            <h3>achivement</h3>
+            <p>Academic achievement or academic performance is the extent to which a student, teacher or institution has attained their short or long-term educational goals. Completion of educational benchmarks such as secondary school diplomas </p>
+
+        </div>
+    </div>
+
+</section>
+<section id="course">
+    <h1 style="font-size: 60px;color: saddlebrown;font-family: Arial Black , sans-serif ">Our Popular campus</h1>
+    <p>having library so many books butiful trees with good environment </p>
+    <div class="course-box">
+
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Library free books</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1527891751199-7225231a68dd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGhhcnZhcmQlMjB1bml2ZXJzaXR5fGVufDB8fDB8fHww">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Our Parking System</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGhhcnZhcmQlMjB1bml2ZXJzaXR5fGVufDB8fDB8fHww">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Our Classroom</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1603573355706-3f15d98cf100?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGhhcnZhcmQlMjB1bml2ZXJzaXR5fGVufDB8fDB8fHww">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Our Playing Garden</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhhcnZhcmQlMjB1bml2ZXJzaXR5fGVufDB8fDB8fHww">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Photo of Graduating</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="courses">
+            <img src="https://images.unsplash.com/photo-1598058921517-81a452bc7cce?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGhhcnZhcmQlMjB1bml2ZXJzaXR5fGVufDB8fDB8fHww">
+            <div class="details">
+                <span>Updated 26/2/24</span>
+                <h6>Entrance of University</h6>
+                <div class="star">
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+                    <i  class="fas fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+<section id="experts">
+    <h1>Community Experts</h1>
+    <p>Our best teachers in out collage they will never teach you just sleep</p>
+    <div class="expert-box">
+        <div class="profile">
+            <img src="https://sunsetridge8.weebly.com/uploads/8/7/0/5/87051718/batman-benaffleck_orig.jpg" alt="" height="300" width="300">
+            <h6>Phython teacher</h6>
+            <p>he know how to print code</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="https://w0.peakpx.com/wallpaper/588/847/HD-wallpaper-ironman-jfcx-rsj.jpg" alt="" height="300" width="300">
+            <h6>Maths teachor</h6>
+            <p>better in integration</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="https://www.liveabout.com/thmb/rMGzbAVT46S82_yIM3WKKANC_Es=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Spider-Man-59b19e1c22fa3a0011ef7041.jpg" alt="" height="300" width="300">
+            <h6>physics teachor</h6>
+            <p>get next level gravity</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="https://i.insider.com/5acbb687f41c7826008b4cfd?width=1136&format=jpeg" alt="" height="300" width="300">
+            <h6>c teachor</h6>
+            <p>he know how to get error</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</section>
+<footer>
+    <div class="footer-col">
+        <h3>Top Products</h3>
+        <li>Campus</li>
+        <li>Placement</li>
+        <li>libaray</li>
+        <li>road</li>
+        <li>cute girls</li>
+    </div>
+    <div class="footer-col">
+        <h3>Top faculty</h3>
+        <li>cs</li>
+        <li>biotech</li>
+        <li>aerospace</li>
+        <li>desiging</li>
+        <li>jee</li>
+    </div>
+    <div class="footer-col">
+        <h3>Top sports</h3>
+        <li>football</li>
+        <li>basketball</li>
+        <li>vollyball</li>
+        <li>running</li>
+        <li>paris</li>
+    </div>
+    <div class="footer-col">
+        <h3>Top india</h3>
+        <li>rank 53</li>
+        <li>rank 2 resarch</li>
+        <li>rank 1 study better than iit</li>
+        <li>rank 2 sports</li>
+        <li>rank 3 btech</li>
+    </div>
+    <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>You can inster your email here for cutomer care</p>
+        <div class="subcribe">
+            <input type="text" placeholder="Your Email id">
+            <a href="#" class="yellow" > Subcribe</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p> Copyright 2021 All right reserved | This templete is made by Gazio/p>
+    </div>
+</footer>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://localhost:63342/webs/web%20assign/service%20page.html?_ijt=in8alk576u2naol2v3vpbn161i&_ij_reload=RELOAD_ON_SAVE";
+    };
+    document.getElementById("gaziabad").onclick = function () {
+        location.href = "http://localhost:63342/webs/web%20assign/unique%20feature.html?_ijt=d35u3do5fv13gn1286vkneajdp&_ij_reload=RELOAD_ON_SAVE";
+    };
+</script>
+</body>
+</html>
