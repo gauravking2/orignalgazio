@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Page</title>
+    <script src="https://kit.fontawesome.com/4796c270ef.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'poppines ',sans-serif;
+
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            padding:0 8%;
+            background-image:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("https://images.unsplash.com/photo-1537888692311-8a7fb3e9f374?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .container h1{
+            text-align: center;
+            padding-top:10%;
+            margin-bottom: 60px;
+            font-weight:600;
+            position: relative;
+            font-size: 60px;
+            color: greenyellow;
+
+        }
+        .container h1:after{
+            content:'';
+            background: mediumspringgreen;
+            width: 100px;
+            height: 5px;
+            position: absolute;
+            bottom:-5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 30px;
+        }
+        .service{
+            text-align: center;
+            padding: 25px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background: greenyellow;
+            transition: transform 0.5s ,background 0.5s   ;
+        }
+        .service i{
+            font-size: 40px;
+            margin-bottom: 8px;
+
+        }
+        .service:hover{
+            background: deepskyblue;
+            color: white;
+            transform: scale(1.05);
+            background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.5), rgba(16, 16, 16, 0.53)),url("https://plus.unsplash.com/premium_photo-1694475329422-96c74e358600?q=80&w=2854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")  ;
+            background-size: cover;
+            background-position: center;
+        }
+        .service:hover i{
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container" >
+    <h1>Our Services</h1>
+    <div class="row">
+        <div class="service">
+            <i class="fas fa-laptop-code"></i>
+            <h2> Web Design</h2>
+            <p>Getting more flexible website free learing only give 2.5 lakh in 6 months</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-chart-line"></i>
+            <h2> Growing</h2>
+            <p>Our keep growing community</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-chart-pie"></i>
+            <h2>Out placements</h2>
+            <p>90% students are placed in kitane ki dukan</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-mobile-alt"></i>
+            <h2>mobile design</h2>
+            <p>out community makes your mobile design better</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h2>Earn money</h2>
+            <p>you can earn money devlops skills</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-id-badge"></i>
+            <h2>Get id</h2>
+            <p>we give your id card for get proxyes</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-network-wired"></i>
+            <h2> Networking</h2>
+            <p>Getting free net 90mbps speed daily</p>
+        </div>
+        <div class="service">
+            <i class="fa-solid fa-download"></i>
+            <h2>Download lecture</h2>
+            <p>now you can download lecutre free here</p>
+        </div>
+        <div class="service">
+            <i class="fa-solid fa-user"></i>
+            <h2>Facultys</h2>
+            <p>Getting best faculty in collegs to teach you</p>
+        </div>
+        <div class="service">
+            <i class="fa-solid fa-phone"></i>
+            <h2>Coustomer care</h2>
+            <p>You can call any time having any issue</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
